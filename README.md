@@ -21,7 +21,7 @@ Acesse o endereço (https://git-scm.com/) faça o download e instale.
 
 ## 3º - Instalação do Ionic
 
-Após a instalação do Node abra o seu terminal de comandos e execute o comando: `npm install -g @ionic/cli`
+Com o Node já instalado abra o seu terminal de comandos e execute o comando: `npm install -g @ionic/cli`
 
 
 ## 4º - Instalação das dependências do projeto
