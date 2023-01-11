@@ -1,0 +1,73 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" class="ion-no-padding">
+      <h1>Maximum</h1>
+
+      <p-table [value]="maxInterval">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="w-25">Producer</th>
+            <th class="w-25">Interval</th>
+            <th class="w-25">Previous Year</th>
+            <th class="w-25">Following Year</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-maxInterval>
+          <tr>
+            <td>{{ maxInterval.producer }}</td>
+            <td>{{ maxInterval.interval }}</td>
+            <td>{{ maxInterval.previousWin }}</td>
+            <td>{{ maxInterval.followingWin }}</td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="4" class="ion-text-center">
+              No records found
+            </td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-margin-top">
+    <h1>Minimum</h1>
+
+    <ion-col size="12" class="ion-no-padding">
+      <p-table [value]="minInterval">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="w-25">Producer</th>
+            <th class="w-25">Interval</th>
+            <th class="w-25">Previous Year</th>
+            <th class="w-25">Following Year</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-minInterval>
+          <tr>
+            <td>{{ minInterval.producer }}</td>
+            <td>{{ minInterval.interval }}</td>
+            <td>{{ minInterval.previousWin }}</td>
+            <td>{{ minInterval.followingWin }}</td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="4" class="ion-text-center">
+              No records found
+            </td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>

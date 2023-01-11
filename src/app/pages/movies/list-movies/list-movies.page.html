@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header class="card-header-custom">
+      <ion-card-title>List movies</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <p-table [value]="listMovies">
+            <ng-template pTemplate="header">
+              <tr>
+                <th class="w-25 ion-text-center">ID</th>
+                <th class="w-25 ion-text-center">
+                  Year
+                  <ion-input [(ngModel)]="moviesYear" placeholder="Filter by year" type="number"
+                    class="input-custom ion-text-start margin-top-custom" [debounce]="400" [min]="minYear" [max]="maxYear"
+                    (ionChange)="getMoviesList()">
+                  </ion-input>
+                </th>
+                <th class="w-25 ion-text-center">Title</th>
+                <th class="w-25 ion-text-center">
+                  Winner?
+                  <br>
+                  <select [(ngModel)]="listWinners" class="select-custom margin-top-custom" (ngModelChange)="getMoviesList()">
+                    <option value="">All</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </th>
+              </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-movie>
+              <tr>
+                <td>{{ movie.id }}</td>
+                <td>{{ movie.year }}</td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.winner ? 'Yes': 'No' }}</td>
+              </tr>
+            </ng-template>
+
+            <ng-template pTemplate="emptymessage">
+              <tr>
+                <td [attr.colspan]="4" class="ion-text-center">
+                  No records found
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+            
+          <p-paginator [rows]="itemsPerPage" [totalRecords]="totalMovies" (onPageChange)="changePage($event)"  styleClass="custom-paginator"></p-paginator>
+    
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

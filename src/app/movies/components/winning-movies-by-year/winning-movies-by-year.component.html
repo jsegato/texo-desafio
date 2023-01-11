@@ -1,0 +1,45 @@
+<ion-grid>
+
+  <ion-row class="ion-align-items-center">
+    <ion-col size="11" class="ion-no-padding">
+      <ion-input [(ngModel)]="moviesYear" placeholder="Search by year" type="number" [min]="minYear" [max]="maxYear"
+        class="input-custom" [debounce]="400" (ionChange)="getMoviesList()"></ion-input>
+    </ion-col>
+    <ion-col size="1">
+      <ion-button class="button-search" (click)="getMoviesList()">
+        <ion-icon name="search" color="light"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12" class="ion-no-padding">
+      <p-table [value]="movies">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="w-20">Id</th>
+            <th class="w-20">Year</th>
+            <th class="w-60">Title</th>
+          </tr>
+
+        </ng-template>
+        <ng-template pTemplate="body" let-movie>
+          <tr>
+            <td>{{ movie.id }}</td>
+            <td>{{ movie.year }}</td>
+            <td>{{ movie.title }}</td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="3" class="ion-text-center">
+              No records found
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>

@@ -1,0 +1,31 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" class="ion-no-padding">
+      <p-table [value]="topWinningStudios">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="w-50">Year</th>
+            <th class="w-50">Win Count</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-topStudio>
+          <tr>
+            <td>{{ topStudio.name }}</td>
+            <td>{{ topStudio.winCount }}</td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="3" class="ion-text-center">
+              No records found
+            </td>
+          </tr>
+        </ng-template>
+        
+      </p-table>
+    </ion-col>
+  </ion-row>
+</ion-grid>

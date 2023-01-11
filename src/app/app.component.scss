@@ -3,9 +3,6 @@ ion-menu ion-content {
 }
 
 ion-menu.md ion-content {
-  --padding-start: 8px;
-  --padding-end: 8px;
-  --padding-top: 20px;
   --padding-bottom: 20px;
 }
 
@@ -116,4 +113,18 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+.custom {
+  max-width: 270px;
+  background-color: #d7d8da;
+}
+
+h4 {
+  margin-top: 10px;
+}
+
+ion-list {
+  background-color: #f3f3f3 !important;
+  padding: 10px !important;
 }
